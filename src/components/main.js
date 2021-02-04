@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import Login from "../login";
+import Signup from "../signup";
+import { NavLink, BrowserRouter as Router, Route } from "react-router-dom";
 
 class Main extends Component {
   render() {
     return (
-      <div>
+      <Router>
         <nav
           class="navbar navbar-expand-lg navbar-light fixed-top"
           id="mainNav"
@@ -26,25 +29,32 @@ class Main extends Component {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#about">
-                    About
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#projects">
-                    Projects
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#signup">
-                    Contact
-                  </a>
-                </li>
+                <NavLink
+                  className="nav-item"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "black",
+                  }}
+                  to="/login"
+                >
+                  Login
+                </NavLink>&nbsp;&nbsp;&nbsp;
+                <NavLink
+                  className="nav-item"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "black",
+                  }}
+                  to="/signup"
+                >
+                  Signup
+                </NavLink>
               </ul>
             </div>
           </div>
         </nav>
+        <Route path="/login" component={Login}></Route>
+        <Route path="/signup" component={Signup}></Route>
 
         <header class="masthead">
           <div class="container d-flex h-100 align-items-center">
@@ -133,7 +143,7 @@ class Main extends Component {
             </div>
           </div>
         </section>
-      </div>
+      </Router>
     );
   }
 }

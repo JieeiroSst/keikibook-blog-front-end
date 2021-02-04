@@ -5,7 +5,7 @@ class SignUp extends Component {
     return (
       <div class="container-fluid h-100 bg-light text-dark">
         <div class="row justify-content-center align-items-center">
-          <h1>Login</h1>
+          <h1>Signup</h1>
         </div>
         <hr />
         <div class="row justify-content-center align-items-center h-100">
