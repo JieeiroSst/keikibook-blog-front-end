@@ -18,7 +18,7 @@ class Main extends Component {
             <button
               class="navbar-toggler navbar-toggler-right"
               type="button"
-              data-toggle="collapse"
+              data-toggle="collapse"    
               data-target="#navbarResponsive"
               aria-controls="navbarResponsive"
               aria-expanded="false"
