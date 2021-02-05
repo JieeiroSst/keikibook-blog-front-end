@@ -20,9 +20,6 @@ class SignUp extends Component {
                   aria-describedby="emailHelp"
                   placeholder="Enter username"
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your username with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
@@ -33,9 +30,6 @@ class SignUp extends Component {
                   aria-describedby="emailHelp"
                   placeholder="Enter password"
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your password with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
@@ -46,9 +40,6 @@ class SignUp extends Component {
                   aria-describedby="emailHelp"
                   placeholder="Enter password"
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your password with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <div class="container">
