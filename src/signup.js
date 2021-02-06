@@ -23,7 +23,6 @@ class SignUp extends Component {
         this.state
       ).then((result) => {
         let response = result;
-        console.log(response);
         if (response) {
           this.setState({
             redirect: true,
@@ -49,7 +48,7 @@ class SignUp extends Component {
   render() {
     const { redirect } = this.state;
     if (redirect) {
-      return <Redirect to={"/"} />;
+      return <Redirect to={"/login"} />;
     }
     return (
       <div class="container-fluid h-100 bg-light text-dark">
