@@ -17,20 +17,22 @@ class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  login() {
+  async login() {
     const { username, password } = this.state;
     if (username && password) {
-      postData(
+      const response = await postData(
         `user/login?username=${username}&password=${password}`,
         this.state
-      ).then((result) => {
-        let response = result;
-        if (response.data) {
-          sessionStorage.setItem("userToken", JSON.stringify(response));
-          this.setState({
-            redirect: true,
-          });
-        }
+      );
+      if (response.data === "") {
+        alert(response.message);
+        return <Redirect to={"/login"} />;
+      }
+      alert(response.message);
+      sessionStorage.setItem("userToken", JSON.stringify(response));
+      this.setState({
+        redirect: true,
+        permission: response.permission,
       });
     }
   }
@@ -49,9 +51,12 @@ class Login extends Component {
   }
 
   render() {
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to={"/admin"} />;
+    const { redirect, permission } = this.state;
+    if (sessionStorage.getItem("userToken") && redirect) {
+      if (permission === "private") {
+        return <Redirect to={"/admin"} />;
+      }
+      return <Redirect to={"/blog"} />;
     }
     return (
       <div class="container-fluid h-100 bg-light text-dark">

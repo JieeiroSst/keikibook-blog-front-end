@@ -4,6 +4,10 @@ export const postData = (type, userData) => {
   return new Promise((resolve, reject) => {
     fetch(baseUrl + type, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(userData),
     })
       .then((response) => response.json())

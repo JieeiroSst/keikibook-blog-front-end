@@ -18,7 +18,7 @@ class Main extends Component {
             <button
               class="navbar-toggler navbar-toggler-right"
               type="button"
-              data-toggle="collapse"    
+              data-toggle="collapse"
               data-target="#navbarResponsive"
               aria-controls="navbarResponsive"
               aria-expanded="false"
@@ -38,7 +38,8 @@ class Main extends Component {
                   to="/login"
                 >
                   Login
-                </NavLink>&nbsp;&nbsp;&nbsp;
+                </NavLink>
+                &nbsp;&nbsp;&nbsp;
                 <NavLink
                   className="nav-item"
                   activeStyle={{
@@ -61,8 +62,7 @@ class Main extends Component {
             <div class="mx-auto text-center">
               <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
               <h2 class="text-white-50 mx-auto mt-2 mb-5">
-                A free, responsive, one page Bootstrap theme created by Start
-                Bootstrap.
+                This life is nothingness man made alive and dead.
               </h2>
               <a class="btn btn-primary js-scroll-trigger" href="#about">
                 Get Started
