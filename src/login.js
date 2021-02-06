@@ -1,7 +1,58 @@
 import React, { Component } from "react";
+import { postData } from "./services/postData";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: "",
+      redirect: false,
+      permission: "",
+    };
+
+    this.login = this.login.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  login() {
+    const { username, password } = this.state;
+    if (username && password) {
+      postData(
+        `user/login?username=${username}&password=${password}`,
+        this.state
+      ).then((result) => {
+        let response = result;
+        if (response.data) {
+          sessionStorage.setItem("userToken", JSON.stringify(response));
+          this.setState({
+            redirect: true,
+          });
+        }
+      });
+    }
+  }
+
+  onChange(event) {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={"/admin"} />;
+    }
     return (
       <div class="container-fluid h-100 bg-light text-dark">
         <div class="row justify-content-center align-items-center">
@@ -10,7 +61,7 @@ class Login extends Component {
         <hr />
         <div class="row justify-content-center align-items-center h-100">
           <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <form action="">
+            <form onSubmit={this.handleSubmit} method="POST">
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input
@@ -19,10 +70,10 @@ class Login extends Component {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter username"
+                  name="username"
+                  onChange={this.onChange}
+                  value={this.state.username}
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your username with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
@@ -32,10 +83,10 @@ class Login extends Component {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter password"
+                  name="password"
+                  onChange={this.onChange}
+                  value={this.state.password}
                 />
-                <small id="emailHelp" class="form-text text-muted">
-                  We'll never share your password with anyone else.
-                </small>
               </div>
               <div class="form-group">
                 <div class="container">
@@ -46,7 +97,10 @@ class Login extends Component {
                       </button>
                     </div>
                     <div class="col">
-                      <button class="col-6 btn btn-primary btn-sm float-right">
+                      <button
+                        class="col-6 btn btn-primary btn-sm float-right"
+                        onClick={this.login}
+                      >
                         Submit
                       </button>
                     </div>
