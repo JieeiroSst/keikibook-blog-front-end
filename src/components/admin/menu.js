@@ -60,7 +60,7 @@ class Menu extends Component {
               </NavLink>
             </div>
             <Switch>
-              <Route exact to="/admin" />
+              <Route exact path="/admin" />
               <Route path="/admin/news" component={News}></Route>
               <Route path="/admin/tags" component={Tags}></Route>
               <Route path="/admin/new-tag" component={NewTag}></Route>
