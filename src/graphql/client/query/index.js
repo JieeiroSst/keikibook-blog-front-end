@@ -38,7 +38,7 @@ export const newById = gql(`
         }
         }
     }
-  `);
+`);
 
 export const tagList = gql(`
     query {
@@ -50,12 +50,13 @@ export const tagList = gql(`
 `);
 
 export const tagById = gql(`
-    query ReadTag(id : $id ) {
+    query ReadTag($id : Int ) {
         tag(id : $id) {
         id 
         name 
         }
-    }`);
+    }
+`);
 
 export const newTagList = gql(`
     query {
@@ -75,10 +76,11 @@ export const newTagList = gql(`
             active
         }
         }
-    }`);
+    }
+`);
 
 export const newTagById = gql(`
-query ReadNewTag(id : $id) {
+query ReadNewTag($id : Int) {
     newTag(id : $id) {
       id
       tagId 
@@ -95,4 +97,5 @@ query ReadNewTag(id : $id) {
         active
       }
     }
-  }`);
+  }
+`);

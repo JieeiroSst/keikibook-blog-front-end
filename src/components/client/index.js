@@ -5,7 +5,9 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import News from "./news";
+import * as types from "../../graphql/client/query";
 
 class Client extends Component {
   constructor(props) {
@@ -23,6 +25,8 @@ class Client extends Component {
     sessionStorage.clear();
     this.setState({ redirect: false });
   }
+
+  showNews() {}
 
   render() {
     const { redirect } = this.state;
@@ -48,7 +52,10 @@ class Client extends Component {
                     Donec id elit non mi porta gravida at eget metus. Maecenas
                     sed diam eget risus varius blandit.
                   </p>
-                  <small className="text-muted">Donec id elit non mi porta.</small>&nbsp;&nbsp;
+                  <small className="text-muted">
+                    Donec id elit non mi porta.
+                  </small>
+                  &nbsp;&nbsp;
                   <NavLink to="/blogs/news/:id">READ</NavLink>
                   <Route path="/blogs/news/:id" component={News} />
                 </li>
