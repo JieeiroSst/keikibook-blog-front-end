@@ -59,19 +59,19 @@ class Menu extends Component {
                 Users
               </NavLink>
             </div>
-            <Switch>
-              <Route exact path="/admin" />
-              <Route path="/admin/news" component={News}></Route>
-              <Route path="/admin/tags" component={Tags}></Route>
-              <Route path="/admin/new-tag" component={NewTag}></Route>
-              <Route path="/admin/feedbacks" component={Feedbacks}></Route>
-              <Route path="/admin/users" component={Users}></Route>
-            </Switch>
           </div>
           <button type="button" onClick={this.logout}>
             Logout
           </button>
         </nav>
+        <Switch>
+          <Route exact path="/admin" />
+          <Route path="/admin/news" component={News}></Route>
+          <Route path="/admin/tags" component={Tags}></Route>
+          <Route path="/admin/new-tag" component={NewTag}></Route>
+          <Route path="/admin/feedbacks" component={Feedbacks}></Route>
+          <Route path="/admin/users" component={Users}></Route>
+        </Switch>
       </Router>
     );
   }
