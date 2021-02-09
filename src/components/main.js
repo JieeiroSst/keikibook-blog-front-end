@@ -11,8 +11,8 @@ class Main extends Component {
           class="navbar navbar-expand-lg navbar-light fixed-top"
           id="mainNav"
         >
-          <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <div className="container">
+            <a className="navbar-brand js-scroll-trigger" href="#page-top">
               keikibook-blog
             </a>
             <button
@@ -27,8 +27,8 @@ class Main extends Component {
               Menu
               <i class="fas fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+              <ul className="navbar-nav ml-auto">
                 <NavLink
                   className="nav-item"
                   activeStyle={{
@@ -57,29 +57,31 @@ class Main extends Component {
         <Route path="/login" component={Login}></Route>
         <Route path="/signup" component={Signup}></Route>
 
-        <header class="masthead">
-          <div class="container d-flex h-100 align-items-center">
-            <div class="mx-auto text-center">
-              <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
-              <h2 class="text-white-50 mx-auto mt-2 mb-5">
+        <header className="masthead">
+          <div className="container d-flex h-100 align-items-center">
+            <div className="mx-auto text-center">
+              <h1 className="mx-auto my-0 text-uppercase">Grayscale</h1>
+              <h2 className="text-white-50 mx-auto mt-2 mb-5">
                 This life is nothingness man made alive and dead.
               </h2>
-              <a class="btn btn-primary js-scroll-trigger" href="#about">
+              <a className="btn btn-primary js-scroll-trigger" href="#about">
                 Get Started
               </a>
             </div>
           </div>
         </header>
 
-        <section class="signup-section" id="signup">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-10 col-lg-8 mx-auto text-center">
-                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                <form class="form-inline d-flex">
+        <section className="signup-section" id="signup">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-10 col-lg-8 mx-auto text-center">
+                <i className="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                <h2 className="text-white mb-5">
+                  Subscribe to receive updates!
+                </h2>
+                <form className="form-inline d-flex">
                   <input
-                    class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+                    className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
                     id="inputEmail"
                     type="email"
                     placeholder="Enter email address..."
@@ -92,53 +94,53 @@ class Main extends Component {
             </div>
           </div>
         </section>
-        <section class="contact-section bg-black">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                  <div class="card-body text-center">
-                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Address</h4>
-                    <hr class="my-4" />
-                    <div class="small text-black-50">
+        <section className="contact-section bg-black">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4 mb-3 mb-md-0">
+                <div className="card py-4 h-100">
+                  <div className="card-body text-center">
+                    <i className="fas fa-map-marked-alt text-primary mb-2"></i>
+                    <h4 className="text-uppercase m-0">Address</h4>
+                    <hr className="my-4" />
+                    <div className="small text-black-50">
                       4923 Market Street, Orlando FL
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                  <div class="card-body text-center">
-                    <i class="fas fa-envelope text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Email</h4>
-                    <hr class="my-4" />
-                    <div class="small text-black-50">
+              <div className="col-md-4 mb-3 mb-md-0">
+                <div className="card py-4 h-100">
+                  <div className="card-body text-center">
+                    <i className="fas fa-envelope text-primary mb-2"></i>
+                    <h4 className="text-uppercase m-0">Email</h4>
+                    <hr className="my-4" />
+                    <div className="small text-black-50">
                       <a href="#!">keikibook-blog@gmail.com</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                  <div class="card-body text-center">
-                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                    <h4 class="text-uppercase m-0">Phone</h4>
-                    <hr class="my-4" />
-                    <div class="small text-black-50">+84 (555) 902-8832</div>
+              <div className="col-md-4 mb-3 mb-md-0">
+                <div className="card py-4 h-100">
+                  <div className="card-body text-center">
+                    <i className="fas fa-mobile-alt text-primary mb-2"></i>
+                    <h4 className="text-uppercase m-0">Phone</h4>
+                    <hr className="my-4" />
+                    <div className="small text-black-50">+84 (555) 902-8832</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="social d-flex justify-content-center">
-              <a class="mx-2" href="#!">
-                <i class="fab fa-twitter"></i>
+            <div className="social d-flex justify-content-center">
+              <a className="mx-2" href="#!">
+                <i className="fab fa-twitter"></i>
               </a>
-              <a class="mx-2" href="#!">
-                <i class="fab fa-facebook-f"></i>
+              <a className="mx-2" href="#!">
+                <i className="fab fa-facebook-f"></i>
               </a>
-              <a class="mx-2" href="#!">
-                <i class="fab fa-github"></i>
+              <a className="mx-2" href="#!">
+                <i className="fab fa-github"></i>
               </a>
             </div>
           </div>

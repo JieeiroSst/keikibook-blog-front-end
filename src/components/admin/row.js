@@ -12,11 +12,11 @@ class Row extends Component {
   render() {
     return (
       <div>
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>
-            <div class="container-fluid">
-              <div class="row">
+            <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"></nav>
+            <div className="container-fluid">
+              <div className="row">
                 <EarningMonthly />
                 <Annual />
                 <Task />
@@ -25,7 +25,7 @@ class Row extends Component {
             </div>
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           <Earning />
           &nbsp;&nbsp;&nbsp;
           <Revenue />

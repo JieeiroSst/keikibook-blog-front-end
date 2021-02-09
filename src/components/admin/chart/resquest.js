@@ -32,8 +32,8 @@ class Request extends Component {
   render() {
     return (
       <div>
-        <div class="col-xl-8 col-lg-7">
-          <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+        <div className="col-xl-8 col-lg-7">
+          <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
         </div>
         <Line ref="chart" data={data} />
       </div>

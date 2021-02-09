@@ -23,7 +23,7 @@ class Revenue extends Component {
   render() {
     return (
       <div>
-        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+        <h6 className="m-0 font-weight-bold text-primary">Revenue Sources</h6>
         <Pie
           data={state}
           options={{

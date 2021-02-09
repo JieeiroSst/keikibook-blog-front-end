@@ -6,7 +6,7 @@ class FeedBacks extends Component {
     return (
       <div>
         <Menu />
-        <table class="table">
+        <table className="table">
           <caption>List of users</caption>
           <thead>
             <tr>

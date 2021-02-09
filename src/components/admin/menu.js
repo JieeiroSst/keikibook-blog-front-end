@@ -34,9 +34,9 @@ class Menu extends Component {
     }
     return (
       <Router>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
               <NavLink exact to="/admin" className="nav-item nav-link active">
                 Home <span class="sr-only">(current)</span>
               </NavLink>

@@ -35,20 +35,20 @@ class Client extends Component {
         <button type="button" className="button" onClick={this.logout}>
           logout
         </button>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small class="text-muted">3 days ago</small>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <ul className="list-group">
+                <li className="list-group-item list-group-item-action flex-column align-items-start">
+                  <div className="d-flex w-100 justify-content-between">
+                    <h5 className="mb-1">List group item heading</h5>
+                    <small className="text-muted">3 days ago</small>
                   </div>
-                  <p class="mb-1">
+                  <p className="mb-1">
                     Donec id elit non mi porta gravida at eget metus. Maecenas
                     sed diam eget risus varius blandit.
                   </p>
-                  <small class="text-muted">Donec id elit non mi porta.</small>&nbsp;&nbsp;
+                  <small className="text-muted">Donec id elit non mi porta.</small>&nbsp;&nbsp;
                   <NavLink to="/blogs/news/:id">READ</NavLink>
                   <Route path="/blogs/news/:id" component={News} />
                 </li>
