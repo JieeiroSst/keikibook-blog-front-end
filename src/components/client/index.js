@@ -5,9 +5,8 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
-import { useQuery } from "@apollo/client";
 import News from "./news";
-import * as types from "../../graphql/client/query";
+// import * as types from "../../graphql/client/query";
 
 class Client extends Component {
   constructor(props) {
@@ -18,6 +17,7 @@ class Client extends Component {
     };
 
     this.logout = this.logout.bind(this);
+    this.showNews = this.showNews.bind(this);
   }
 
   logout() {
@@ -26,7 +26,8 @@ class Client extends Component {
     this.setState({ redirect: false });
   }
 
-  showNews() {}
+  showNews() {
+  }
 
   render() {
     const { redirect } = this.state;

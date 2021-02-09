@@ -9,15 +9,19 @@ import {
   ApolloClient,
   ApolloProvider,
   InMemoryCache,
-  createHttpLink,
+  HttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { RetryLink } from "@apollo/client/link/retry";
 
 const store = createStore(appReducers);
 
-const httpLink = createHttpLink({
-  uri: "localhost:8080/api/graphql",
-});
+const directionalLink = new RetryLink().split(
+  (operation) => operation.getContext().version === 1,
+  new HttpLink({ uri: "localhost:8080/api/graphql" }),
+  new HttpLink({ uri: "localhost:8080/api/admin/graphql" })
+);
+
 
 const authLink = setContext((_, { headers }) => {
   const data = JSON.parse(sessionStorage.getItem("userToken"));
@@ -31,7 +35,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: authLink.concat(directionalLink),
   cache: new InMemoryCache(),
 });
 
