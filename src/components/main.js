@@ -8,7 +8,7 @@ class Main extends Component {
     return (
       <Router>
         <nav
-          class="navbar navbar-expand-lg navbar-light fixed-top"
+          className="navbar navbar-expand-lg navbar-light fixed-top"
           id="mainNav"
         >
           <div className="container">
@@ -16,7 +16,7 @@ class Main extends Component {
               keikibook-blog
             </a>
             <button
-              class="navbar-toggler navbar-toggler-right"
+              className="navbar-toggler navbar-toggler-right"
               type="button"
               data-toggle="collapse"
               data-target="#navbarResponsive"
@@ -25,7 +25,7 @@ class Main extends Component {
               aria-label="Toggle navigation"
             >
               Menu
-              <i class="fas fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
@@ -86,7 +86,7 @@ class Main extends Component {
                     type="email"
                     placeholder="Enter email address..."
                   />
-                  <button class="btn btn-primary mx-auto" type="submit">
+                  <button className="btn btn-primary mx-auto" type="submit">
                     Subscribe
                   </button>
                 </form>
