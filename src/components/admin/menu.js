@@ -37,7 +37,7 @@ class Menu extends Component {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <NavLink exact to="/admin" className="nav-item nav-link active">
+              <NavLink to="/admin" className="nav-item nav-link active">
                 Home <span class="sr-only">(current)</span>
               </NavLink>
               <NavLink to="/admin/news" className="nav-item nav-link active">
