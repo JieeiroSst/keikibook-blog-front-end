@@ -7,21 +7,20 @@ class Admin extends Component {
     super(props);
 
     this.state = {
-      redirect: true,
+      isRedirect: true,
     };
 
     this.logout = this.logout.bind(this);
   }
 
   logout() {
-    sessionStorage.getItem("userToken", "");
     sessionStorage.clear();
-    this.setState({ redirect: false });
+    this.setState({ isRedirect: false });
   }
 
   render() {
-    const { redirect } = this.state;
-    if (!redirect) {
+    const { isRedirect } = this.state;
+    if (!isRedirect) {
       return <Redirect to="/" />;
     }
     return (
