@@ -1,123 +1,62 @@
-import { gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import * as types from "./shema";
 
-export const tagList = gql(`
-query {
-    tags{
-      id
-      name
-    }
-  }`);
+export const tagList = () => {
+  const { loading, error, data } = useQuery(types.tagList);
+  return { loading, data, error };
+};
 
-export const tagById = gql(`
-query querytag($id: Int) {
-    tag(id:$id){
-      id 
-      name 
-    }
-  }`);
+export const tagById = ({ id }) => {
+  const { loading, error, data } = useQuery(types.tagById, {
+    variables: { id },
+  });
+  return { loading, data, error };
+};
 
-export const feedBacksList = gql(`
-query{
-    feedbacks {
-      id
-      name 
-      phone 
-      email 
-      address 
-      content 
-      createdAt
-    }
-  }`);
+export const feedBacksList = () => {
+  const { loading, error, data } = useQuery(types.feedBacksList);
+  return { loading, data, error };
+};
 
-export const feedBacksById = gql(`
-query queryFeedBacks($id: Int){
-    feedback(id: $id) {
-      id
-      name 
-      phone 
-      email 
-      address 
-      content 
-      createdAt
-    }
-  }`);
+export const feedBacksById = ({ id }) => {
+  const { loading, error, data } = useQuery(types.feedBacksById, {
+    variables: { id },
+  });
+  return { loading, data, error };
+};
 
-export const newTagList = gql(`
-query {
-    newTags {
-      id
-      tagId
-      newId
-    }
-  }`);
+export const newTagList = () => {
+  const { loading, error, data } = useQuery(types.newTagList);
+  return { loading, data, error };
+};
 
-export const newTagById = gql(`
-  query queryNewTag($id:Int){
-    newTag(id: $id) {
-      id
-      tagId
-      newId
-    }
-  }`);
+export const newTagById = ({ id }) => {
+  const { loading, error, data } = useQuery(types.newTagById, {
+    variables: { id },
+  });
+  return { loading, data, error };
+};
 
-export const profileList = gql(`
-query {
-    profiles {
-      id
-      firstName
-      lastName
-      address 
-      phone 
-      createdAt 
-    }
-  }
-`);
+export const profileList = () => {
+  const { loading, error, data } = useQuery(types.profileList);
+  return { loading, data, error };
+};
 
-export const profileById = gql(`
-query queryProfile($id :Int) {
-    profileId(id : $id) {
-      id
-      firstName
-      lastName
-      address 
-      phone 
-      createdAt 
-    }
-  }
-`);
+export const profileById = ({ id }) => {
+  const { loading, error, data } = useQuery(types.profileById, {
+    variables: { id },
+  });
+  return { loading, data, error };
+};
 
-export const newsList = gql(`
-query{
-    news{
-      id
-      title
-      description
-      image
-      detail
-      createdAt
-      topHot
-      viewCount
-      content
-      tagId
-      active
-    }
-  }
-`);
+export const newlist = () => {
+  const { loading, error, data } = useQuery(types.newsList);
+  return { loading, data, error };
+};
 
-export const newById = gql(`
-query queryNew($id: Int){
-    new(id:$id){
-      id
-      title
-      description
-      image
-      detail
-      createdAt
-      topHot
-      viewCount
-      content
-      tagId
-      active
-    }
-  }
-`);
+export const newById = ({ id }) => {
+  const { loading, error, data } = useQuery(types.newById, {
+    variables: { id },
+  });
+  return { loading, data, error };
+};
