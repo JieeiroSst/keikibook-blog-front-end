@@ -41,7 +41,8 @@ class News extends Component {
                 <button>
                   <Link to="/admin/news/update/:id">Update</Link>
                 </button>
-                <button>Delete</button>
+                <button type="submit">Delete</button>
+                <button type="submit">Public</button>
               </td>
             </tr>
           </tbody>
