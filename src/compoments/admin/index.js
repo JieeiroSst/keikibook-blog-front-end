@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
-import ListNews from "./news/list_new";
+import News from "./news";
 
 class Admin extends Component {
   constructor(props) {
@@ -53,13 +53,13 @@ class Admin extends Component {
           </div>
           <button type="button" onClick={this.logout}>
             Logout
-            <div className="col-md-10 admin-content">
-              <Switch>
-                <Route exact path="/admin/news" component={ListNews} />
-              </Switch>
-            </div>
-          </button> 
+          </button>
         </nav>
+        <div className="col-md-10 admin-content">
+          <Switch>
+            <Route exact path="/admin/news" component={News} />
+          </Switch>
+        </div>
       </BrowserRouter>
     );
   }
