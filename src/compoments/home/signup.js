@@ -1,40 +1,33 @@
 import React, { Component } from "react";
-import { postData } from "./services/postData";
+import { postData } from "../../services/postData";
 import { Redirect } from "react-router-dom";
 
-class Login extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
       password: "",
       redirect: false,
-      permission: "",
     };
-
-    this.login = this.login.bind(this);
+    this.signup = this.signup.bind(this);
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async login() {
+  async signup() {
     const { username, password } = this.state;
-    if (username && password) {
-      const response = await postData(
-        `user/login?username=${username}&password=${password}`,
-        this.state
-      );
-      if (response.data === "") {
-        alert(response.message);
-        return <Redirect to={"/login"} />;
+    postData(
+      `user/signup?username=${username}&password=${password}`,
+      this.state
+    ).then((result) => {
+      let response = result;
+      if (response) {
+        this.setState({
+          redirect: true,
+        });
       }
-      alert(response.message);
-      sessionStorage.setItem("userToken", JSON.stringify(response));
-      this.setState({
-        redirect: true,
-        permission: response.permission,
-      });
-    }
+    });
   }
 
   onChange(event) {
@@ -51,17 +44,14 @@ class Login extends Component {
   }
 
   render() {
-    const { redirect, permission } = this.state;
-    if (sessionStorage.getItem("userToken") && redirect) {
-      if (permission === "private") {
-        return <Redirect to={"/admin"} />;
-      }
-      return <Redirect to={"/blog"} />;
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to={"/login"} />;
     }
     return (
       <div className="container-fluid h-100 bg-light text-dark">
         <div className="row justify-content-center align-items-center">
-          <h1>Login</h1>
+          <h1>Signup</h1>
         </div>
         <hr />
         <div className="row justify-content-center align-items-center h-100">
@@ -104,7 +94,7 @@ class Login extends Component {
                     <div className="col">
                       <button
                         className="col-6 btn btn-primary btn-sm float-right"
-                        onClick={this.login}
+                        onClick={this.signup}
                       >
                         Submit
                       </button>
@@ -120,4 +110,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;

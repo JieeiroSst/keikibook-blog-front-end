@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
-import Main from "./components/main";
-import Admin from "./components/admin";
-import Client from "./components/client";
+import { Switch, Route } from "react-router-dom";
+
+import Customer from "./compoments/customer";
+import Admin from "./compoments/admin";
+import Home from "./compoments/home";
+import NotFound from "./compoments/not_found";
+import Login from "./compoments/home/login";
+import Signup from "./compoments/home/signup";
+
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <Link to="/"></Link>
-          <Link to="/admin"></Link>
-          <Link to="/blog"></Link>
-        </div>
-        <Route exact path="/" component={Main} />
-        <Route path="/admin" component={Admin} />
-        <Route path="/blog" component={Client} />
-      </BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/login" component={Login}></Route>
+        <Route exact path="/signup" component={Signup}></Route>
+        <Route exact path="/blog" component={Customer} />
+        <Route exact path="/admin" component={Admin} />
+        <Route exact component={NotFound}></Route>
+      </Switch>
     );
   }
 }

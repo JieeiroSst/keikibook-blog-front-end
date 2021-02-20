@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import {
-  NavLink,
-  BrowserRouter,
-  Redirect,
-} from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
+import News from "./news";
 
-class Menu extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
 
@@ -17,7 +14,6 @@ class Menu extends Component {
   }
 
   logout() {
-    sessionStorage.getItem("userToken", "");
     sessionStorage.clear();
     this.setState({ redirect: false });
   }
@@ -27,7 +23,7 @@ class Menu extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <BrowserRouter>
+      <div>
         <nav className="navbar navbar-expand-sm bg-light">
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -52,9 +48,12 @@ class Menu extends Component {
             </button>
           </ul>
         </nav>
-      </BrowserRouter>
+        <div className="container-fluid">
+          <News />
+        </div>
+      </div>
     );
   }
 }
 
-export default Menu;
+export default Home;

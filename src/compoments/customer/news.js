@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 class News extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +11,6 @@ class News extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
           <li className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">List group item heading</h5>
@@ -25,7 +24,6 @@ class News extends Component {
             &nbsp;&nbsp;
             <NavLink to="/blogs/news/:id">READ</NavLink>
           </li>
-        </BrowserRouter>
       </div>
     );
   }

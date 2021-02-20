@@ -12,7 +12,7 @@ class NotFound extends Component {
               Sorry, an error has occured, Requested page not found!
             </div>
             <div class="error-actions">
-              <span class="glyphicon glyphicon-envelope">Contact Support</span> 
+              <span class="glyphicon glyphicon-envelope">Contact Support</span>
             </div>
           </div>
         </div>

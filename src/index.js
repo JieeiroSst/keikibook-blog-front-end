@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 import appReducers from "./reducers";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import reportWebVitals from "./reportWebVitals";
 import {
   ApolloClient,
   ApolloProvider,
@@ -21,7 +22,6 @@ const directionalLink = new RetryLink().split(
   new HttpLink({ uri: "localhost:8080/api/graphql" }),
   new HttpLink({ uri: "localhost:8080/api/admin/graphql" })
 );
-
 
 const authLink = setContext((_, { headers }) => {
   const data = JSON.parse(sessionStorage.getItem("userToken"));
@@ -40,11 +40,13 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <App />
-    </Provider>,
-  </ApolloProvider>,
+  <BrowserRouter>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ApolloProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
