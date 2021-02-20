@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter, NavLink, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import News from "./news";
+import CreateNews from "./news/create";
+import UpdateNews from "./news/update";
 import NewTags from "./new_tags";
 import Tags from "./tags";
+import CreateTags from "./tags/create";
+import UpdateTags from "./tags/update";
 import FeedBacks from "./feedbacks";
 import Users from "./users";
 
@@ -72,9 +76,21 @@ class Admin extends Component {
         </div>
         <div className="col-md-10 admin-content">
           <Switch>
-            <Route exact path="/admin/news" component={News} />
+            <Route exact path="/admin/news" component={News}></Route>
+            <Route
+              exact
+              path="/admin/news/create"
+              component={CreateNews}
+            ></Route>
+            <Route
+              exact
+              path="/admin/news/update/:id"
+              component={UpdateNews}
+            ></Route>
             <Route exact path="/admin/new-tag" component={NewTags} />
             <Route exact path="/admin/tags" component={Tags} />
+            <Route exact path="/admin/tags/create" component={CreateTags} />
+            <Route exact path="/admin/tags/update/:id" component={UpdateTags} />
             <Route exact path="/admin/users" component={Users} />
             <Route exact path="/admin/feedbacks" component={FeedBacks} />
           </Switch>
