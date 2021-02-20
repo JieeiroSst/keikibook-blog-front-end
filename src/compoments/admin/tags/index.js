@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Menu from "../menu";
 
 class Tags extends Component {
   render() {
     return (
       <div>
-        <Menu />
         <table className="table">
           <caption>List of users</caption>
           <thead>

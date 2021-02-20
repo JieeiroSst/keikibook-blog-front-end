@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class News extends Component {
+class Users extends Component {
   render() {
     return (
       <table className="table">
@@ -38,4 +38,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Users;
