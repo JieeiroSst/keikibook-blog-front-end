@@ -7,6 +7,11 @@ import Tags from "./tags";
 import FeedBacks from "./feedbacks";
 import Users from "./users";
 
+import Annual from "./information/annual";
+import Earnings from "./information/earnings";
+import Request from "./information/request";
+import Task from "./information/task";
+
 class Admin extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +64,12 @@ class Admin extends Component {
             Logout
           </button>
         </nav>
+        <div className="row">
+          <Annual />
+          <Earnings />
+          <Request />
+          <Task />
+        </div>
         <div className="col-md-10 admin-content">
           <Switch>
             <Route exact path="/admin/news" component={News} />

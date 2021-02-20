@@ -4,8 +4,8 @@ class Tags extends Component {
   render() {
     return (
       <div>
+        <h2>List of Tags</h2>
         <table className="table">
-          <caption>List of users</caption>
           <thead>
             <tr>
               <th scope="col">#</th>

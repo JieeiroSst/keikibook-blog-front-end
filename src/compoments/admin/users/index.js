@@ -3,8 +3,9 @@ import React, { Component } from "react";
 class Users extends Component {
   render() {
     return (
+      <div>
+      <h2>List of Users</h2>
       <table className="table">
-        <caption>List of users</caption>
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -34,6 +35,7 @@ class Users extends Component {
           </tr>
         </tbody>
       </table>
+    </div>
     );
   }
 }

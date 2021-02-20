@@ -4,8 +4,8 @@ class FeedBacks extends Component {
   render() {
     return (
       <div>
+        <h2>List of FeedBacks</h2>
         <table className="table">
-          <caption>List of users</caption>
           <thead>
             <tr>
               <th scope="col">#</th>
