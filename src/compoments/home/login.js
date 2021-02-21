@@ -8,7 +8,7 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      redirect: false,
+      isRedirect: false,
       permission: "",
     };
 
@@ -30,7 +30,7 @@ class Login extends Component {
     alert(response.message);
     sessionStorage.setItem("userToken", JSON.stringify(response));
     this.setState({
-      redirect: true,
+      isRedirect: true,
       permission: response.permission,
     });
   }
@@ -49,8 +49,8 @@ class Login extends Component {
   }
 
   render() {
-    const { redirect, permission } = this.state;
-    if (sessionStorage.getItem("userToken") && redirect) {
+    const { isRedirect, permission } = this.state;
+    if (sessionStorage.getItem("userToken") && isRedirect) {
       if (permission === "private") {
         return <Redirect to={"/admin"} />;
       }

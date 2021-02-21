@@ -8,7 +8,7 @@ class SignUp extends Component {
     this.state = {
       username: "",
       password: "",
-      redirect: false,
+      isRedirect: false,
     };
     this.signup = this.signup.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -24,7 +24,7 @@ class SignUp extends Component {
       let response = result;
       if (response) {
         this.setState({
-          redirect: true,
+          isRedirect: true,
         });
       }
     });
@@ -44,8 +44,8 @@ class SignUp extends Component {
   }
 
   render() {
-    const { redirect } = this.state;
-    if (redirect) {
+    const { isRedirect } = this.state;
+    if (isRedirect) {
       return <Redirect to={"/login"} />;
     }
     return (
